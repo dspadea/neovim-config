@@ -2,13 +2,23 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
-lsp.ensure_installed({
-  'tsserver',
-  'rust_analyzer',
-})
+--lsp.ensure_installed({
+--  'tsserver',
+--  'rust_analyzer',
+--})
 
 -- Fix Undefined global 'vim'
-lsp.nvim_workspace()
+--lsp.nvim_workspace()
+
+require("mason").setup()
+require("mason-lspconfig").setup {
+    ensure_installed = {
+        "lua_ls", "rust_analyzer", "tsserver", "clangd", "neocmake",
+        "cssls", "html", "gopls", "helm_ls", "jqls", "marksman",
+        "pyright", "ruby_ls", "sqlls", "tflint", "yamlls", "lemminx",
+        "zls", "taplo"},
+}
+
 
 
 local cmp = require('cmp')
@@ -23,9 +33,9 @@ local cmp_mappings = lsp.defaults.cmp_mappings({
 cmp_mappings['<Tab>'] = nil
 cmp_mappings['<S-Tab>'] = nil
 
-lsp.setup_nvim_cmp({
-  mapping = cmp_mappings
-})
+--lsp.setup_nvim_cmp({
+--  mapping = cmp_mappings
+--})
 
 lsp.set_preferences({
     suggest_lsp_servers = false,

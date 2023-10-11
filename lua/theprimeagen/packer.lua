@@ -6,11 +6,16 @@ vim.cmd.packadd('packer.nvim')
 return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
+  use {
+    "williamboman/mason.nvim",
+    "williamboman/mason-lspconfig.nvim",
+    "neovim/nvim-lspconfig",
+  }
 
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
 	  -- or                            , branch = '0.1.x',
-	  requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim'} }
   }
 
   use({
@@ -49,7 +54,7 @@ return require('packer').startup(function(use)
 
   use {
 	  'VonHeikemen/lsp-zero.nvim',
-	  branch = 'v1.x',
+	  branch = 'v3.x',
 	  requires = {
 		  -- LSP Support
 		  {'neovim/nvim-lspconfig'},
