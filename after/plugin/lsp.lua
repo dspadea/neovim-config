@@ -7,7 +7,7 @@ require("mason-lspconfig").setup {
     automatic_installation = true,
     ensure_installed = {
         "lua_ls", "rust_analyzer", "tsserver", "clangd", "neocmake",
-        "cssls", "html", "gopls", "helm_ls", "jqls", "marksman",
+        "cssls", "html", "gopls", "helm_ls", "jqls", "marksman", "ruby_lsp",
         "pyright", "sqlls", "tflint", "yamlls", "lemminx",
         "zls", "taplo", "jdtls", "grammarly", "graphql", "bashls", "ansiblels"},
 }
