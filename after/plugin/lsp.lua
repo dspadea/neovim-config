@@ -2,6 +2,8 @@ local lsp = require("lsp-zero")
 
 lsp.preset("recommended")
 
+
+-- Make sure ruby gem is installed 
 require("mason").setup()
 require("mason-lspconfig").setup {
     automatic_installation = true,
